@@ -50,6 +50,10 @@ void CompilerContext::addStateVariable(
 	unsigned _byteOffset
 )
 {
+	std::cout<<"{ ";
+    	std::cout<<"\"var_name\":\"" << boost::lexical_cast<std::string>(_declaration.name()) << "\", ";
+    	std::cout<<"\"offset\":" <<  boost::lexical_cast<std::string>(_storageOffset) << ", ";
+    	std::cout<< "\"byte_offset\":" << boost::lexical_cast<std::string>(_byteOffset) << "}\n";
 	m_stateVariables[&_declaration] = make_pair(_storageOffset, _byteOffset);
 }
 
